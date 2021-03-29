@@ -15,7 +15,10 @@ exports.config = {
     capabilities: [{
         maxInstances: 1,
         browserName: 'chrome',
-        acceptInsecureCerts: true
+        acceptInsecureCerts: true,
+        'goog:chromeOptions': {
+            args: ['--window-size=1280,720']
+        }
     }],
 
     logLevel: 'info',

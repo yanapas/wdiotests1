@@ -1,6 +1,6 @@
-import Page from './page';
+import PortalPage from "./portal.page";
 
-class ProfilePage extends Page {
+class ProfilePage extends PortalPage {
   get iconUser () { return $('.ant-avatar-square'); }
 
   isOpen () {

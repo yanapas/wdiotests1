@@ -8,7 +8,7 @@ class LoginPage extends Page {
     get loginValidationError () { return $('//div[contains(@class, "ant-form-item-with-help")][.//input[@id="normal_login_email"]]//div[@role="alert"]'); }
 
     open () {
-        return super.open('/');
+        return super.open('/user/login');
     }
 
     setLogin (email) {

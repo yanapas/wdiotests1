@@ -37,7 +37,7 @@ class LoginPage extends Page {
 
     loginRequiredError() {
         expect(this.loginValidationError).toBeDisplayed();
-        expect(this.loginValidationError.getText()).toEqual('Required');
+        expect(this.loginValidationError).toHaveText('Required');
     }
 }
 

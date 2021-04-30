@@ -10,11 +10,11 @@ describe('Auth', () => {
         browser.execute('window.localStorage.clear()');
     });
 
-    it('user logs in with valid data', () => {
-        LoginPage.setLogin('xonol63306@gameqo.com');
-        LoginPage.setPassword('Qwerty!234');
-        LoginPage.clickSubmitButton();
-        ProfilePage.isOpen();
+    it('user logs in with valid data', async () => {
+        await LoginPage.setLogin('monstervan221188@gmail.com');
+        await LoginPage.setPassword('Azazel22#');
+        await LoginPage.clickSubmitButton();
+        await ProfilePage.isOpen();
     });
 
     it('submit button is disabled if login and password are absent', () => {

@@ -5,22 +5,23 @@ class LoginPage extends Page {
     get inputPassword () { return $('#normal_login_password'); }
     get buttonSubmit () { return $('.login-form-button'); }
     get errorToast () { return $('.ant-notification-notice-message'); }
-    get loginValidationError () { return $('//div[contains(@class, "ant-form-item-with-help")][.//input[@id="normal_login_email"]]//div[@role="alert"]'); }
+    get loginValidationError () { return $$('//div[contains(@class, "ant-form-item-with-help")][.//input[@id="normal_login_email"]]//div[@role="alert"]'); }
 
     open () {
         return super.open('/user/login');
     }
 
-    setLogin (email) {
-        this.inputUsername.setValue(email);
+    async setLogin (email) {
+
+        await (await this.inputUsername).setValue(email);
     }
 
-    setPassword (password) {
-        this.inputPassword.setValue(password);
+    async setPassword (password) {
+        await (await this.inputPassword).setValue(password);
     }
 
-    clickSubmitButton () {
-        this.buttonSubmit.click();
+    async clickSubmitButton () {
+        await (await this.buttonSubmit).click();
     }
 
     submitButtonIsDisabled() {
@@ -31,8 +32,8 @@ class LoginPage extends Page {
         expect(this.errorToast).toBeDisplayed();
     }
 
-    emptyLoginInput() {
-        this.clearInput(this.inputUsername);
+    async emptyLoginInput() {
+        await (await this.clearInput)(await this.inputUsername);
     }
 
     loginRequiredError() {

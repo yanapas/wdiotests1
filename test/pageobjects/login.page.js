@@ -24,21 +24,21 @@ class LoginPage extends Page {
         await (await this.buttonSubmit).click();
     }
 
-    submitButtonIsDisabled() {
-        expect(this.buttonSubmit).toBeDisabled();
+    async submitButtonIsDisabled() {
+        expect(await this.buttonSubmit).toBeDisabled();
     }
 
-    errorToastAppeared() {
-        expect(this.errorToast).toBeDisplayed();
+    async errorToastAppeared() {
+        expect(await this.errorToast).toBeDisplayed();
     }
 
     async emptyLoginInput() {
         await (await this.clearInput)(await this.inputUsername);
     }
 
-    loginRequiredError() {
-        expect(this.loginValidationError).toBeDisplayed();
-        expect(this.loginValidationError).toHaveText('Required');
+    async loginRequiredError() {
+        expect(await this.loginValidationError).toBeDisplayed();
+        expect(await this.loginValidationError).toHaveText('Required');
     }
 }
 

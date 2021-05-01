@@ -21,11 +21,11 @@ describe('Auth', () => {
         LoginPage.submitButtonIsDisabled();
     });
 
-    it('fails if invalid data provided', () => {
-        LoginPage.setLogin('example@example.com');
-        LoginPage.setPassword('123456');
-        LoginPage.clickSubmitButton();
-        LoginPage.errorToastAppeared();
+    it('fails if invalid data provided', async () => {
+        await LoginPage.setLogin('example@example.com');
+        await LoginPage.setPassword('123456');
+        await LoginPage.clickSubmitButton();
+        await LoginPage.errorToastAppeared();
     });
 
     it('login input is required', () => {

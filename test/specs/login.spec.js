@@ -11,8 +11,8 @@ describe('Auth', () => {
     });
 
     it('user logs in with valid data', async () => {
-        await LoginPage.setLogin('monstervan221188@gmail.com');
-        await LoginPage.setPassword('Azazel22#');
+        await LoginPage.setLogin(process.env.LOGIN);
+        await LoginPage.setPassword(process.env.PASSWORD);
         await LoginPage.clickSubmitButton();
         await ProfilePage.isOpen();
     });
